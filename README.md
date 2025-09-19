@@ -1,5 +1,16 @@
-# OCR FastAPI Service
+## Table of Contents
 
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+    - [Run the API server](#run-the-api-server)
+    - [API Endpoint](#api-endpoint)
+- [Model Info](#model-info)
+- [Development](#development)
+- [References](#references)
+
+## OCR Rest API
 This project provides an OCR (Optical Character Recognition) API using [FastAPI](https://fastapi.tiangolo.com/) and [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR). It supports document image text detection and recognition using pre-trained PaddleOCR models.
 
 ## Features
