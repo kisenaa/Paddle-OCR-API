@@ -33,8 +33,8 @@ This project provides an OCR (Optical Character Recognition) API using [FastAPI]
 1. **Clone the repository**
 
    ```sh
-   git clone <your-repo-url>
-   cd ocr_fastapi
+   git clone https://github.com/kisenaa/Paddle-OCR-API --depth 1
+   cd Paddle-OCR-API
    ```
 
 2. **Run makefile command to install depedencies**
