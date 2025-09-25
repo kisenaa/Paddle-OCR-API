@@ -169,3 +169,5 @@ cython_debug/
 paddle_model/**
 venv/
 .venv/
+src/modules/paddleocr_openvino/models/
+src/modules/paddleocr_openvino/fonts/

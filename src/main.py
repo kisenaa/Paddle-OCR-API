@@ -4,13 +4,12 @@ import aiofiles
 import os
 from fastapi import FastAPI, Response, UploadFile
 from fastapi.middleware.gzip import GZipMiddleware
-from pydantic import BaseModel
-from typing import Union
 from service.ocr_service import handle_ocr_inference
-from model.ocr_model import OCRResponse, OCRImageResult, OCRJsonResult, OCROutput
+from model.ocr_model import OCRResponse
+from fastapi.responses import ORJSONResponse
 import asyncio
 
-app = FastAPI(title="OCR API", description="API for OCR processing", version="1.0.0", root_path="/api/v1")
+app = FastAPI(title="OCR API", description="API for OCR processing", version="1.0.0", root_path="/api/v1", default_response_class=ORJSONResponse)
 app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=6)
 
 
@@ -21,7 +20,7 @@ app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=6)
     response_description="OCR results including processed images and JSON data",
     response_model=OCRResponse,
 )
-async def run_ocr(image_file: UploadFile, response: Response) -> Union[OCRResponse, dict]:
+async def run_ocr(image_file: UploadFile, response: Response):
     try:
         start_time = time.perf_counter()
         
